@@ -14,6 +14,7 @@ function App () {
     });
 
   return (
+    
     <main className="App">
       <header className="App-header">
         <h1 style={{textAlign: "center", fontSize: 40}}>Trelloyes!</h1>
@@ -22,6 +23,8 @@ function App () {
       {appLists}
       </div>
     </main>
+    
+    
   )
   
 }

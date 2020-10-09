@@ -1,25 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRenderer } from 'react-dom/test-utils';
-import App from './App';
+import Card from './Card';
 import renderer from 'react-test-renderer';
 
-
-
-
-describe('App Compoenet', () => {
-    test('Component renders without crashing', () => {
-        const main = document.createElement('main');
-        ReactDOM.render(<App/>, main);
-    
-        ReactDOM.unmountComponentAtNode(main);
+describe ('Card component', () => {
+    test('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<Card/>, div);
+        ReactDOM.unmountComponentAtNode(div);
     })
 
     test('renders the UI as expected', () => {
         const rendered = renderer 
-            .create(<App/>)
+            .create(<Card title="Third card" content="lorem ipsum"/>)
             .toJSON();
         expect(rendered).toMatchSnapshot();
     });
 });
-
